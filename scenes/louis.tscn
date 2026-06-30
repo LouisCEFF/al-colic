@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8cl6nusp7fc2"]
+
+[ext_resource type="Script" uid="uid://bvm1jdildcne5" path="res://scripts/louis.gd" id="1_ocp0k"]
+[ext_resource type="SpriteFrames" uid="uid://ylagnipvsvyj" path="res://assets/Louis.tres" id="2_6ksfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61hvx"]
+size = Vector2(25, 6.25)
+
+[node name="Louis" type="CharacterBody2D" unique_id=799206629]
+script = ExtResource("1_ocp0k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1616816489]
+position = Vector2(0, -13)
+scale = Vector2(0.8962493, 0.8962493)
+sprite_frames = ExtResource("2_6ksfa")
+animation = &"Sprint_UDiag"
+autoplay = "Idle"
+frame_progress = 0.97983766
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065373372]
+position = Vector2(0, -1.9999999)
+scale = Vector2(0.54113156, 0.54113156)
+shape = SubResource("RectangleShape2D_61hvx")

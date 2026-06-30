@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b57ennb81whox"]
+
+[ext_resource type="PackedScene" uid="uid://b38p4lqqcoyuq" path="res://scenes/al_colique.tscn" id="1_2ddto"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_61hvx"]
+normal = Vector2(-1, 0)
+distance = -2.0
+
+[node name="Sandbox" type="Node2D" unique_id=401137109]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=560912724]
+position = Vector2(1102, 214)
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1032407721]
+shape = SubResource("WorldBoundaryShape2D_61hvx")
+
+[node name="Al-Colique" parent="." unique_id=1535677163 instance=ExtResource("1_2ddto")]
+position = Vector2(67, -44)

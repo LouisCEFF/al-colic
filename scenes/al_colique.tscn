@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://b38p4lqqcoyuq"]
+
+[ext_resource type="Script" uid="uid://232pjsg0wo30" path="res://scripts/al_colique.gd" id="1_2a557"]
+[ext_resource type="Texture2D" uid="uid://ccn0j5epdu41f" path="res://assets/AlColicHead.png" id="1_nf2cs"]
+[ext_resource type="Texture2D" uid="uid://ci20exqij5iny" path="res://assets/Al-colique Arm 1.png" id="2_exuhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rivm7"]
+atlas = ExtResource("2_exuhx")
+region = Rect2(0, 0, 291, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61hvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rivm7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcoc8"]
+atlas = ExtResource("2_exuhx")
+region = Rect2(291, 0, 291, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hkav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcoc8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lix"]
+atlas = ExtResource("2_exuhx")
+region = Rect2(0, 0, 291, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkv7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lix")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2mkq"]
+atlas = ExtResource("2_exuhx")
+region = Rect2(291, 0, 291, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6y8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2mkq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61hvx"]
+radius = 19.104973
+
+[node name="Al-Colique" type="CharacterBody2D" unique_id=1535677163]
+script = ExtResource("1_2a557")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=541804204]
+position = Vector2(-20, -43.607143)
+scale = Vector2(0.58928573, 0.58928573)
+target_position = Vector2(-76.364, 0)
+collision_mask = 4
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1955714151]
+position = Vector2(-20, -43.607143)
+scale = Vector2(0.58928573, 0.58928573)
+target_position = Vector2(69.576, 0)
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=281971269]
+show_behind_parent = true
+position = Vector2(-20, -43.607143)
+scale = Vector2(0.58928573, 0.58928573)
+texture = ExtResource("1_nf2cs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1355160839]
+show_behind_parent = true
+position = Vector2(-70, 83)
+scale = Vector2(0.6755319, 0.6755319)
+sprite_frames = SubResource("SpriteFrames_61hvx")
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D" unique_id=823899325]
+show_behind_parent = true
+position = Vector2(-122.00001, 87)
+scale = Vector2(0.65957445, 0.65957445)
+sprite_frames = SubResource("SpriteFrames_8hkav")
+flip_h = true
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1084637535]
+show_behind_parent = true
+position = Vector2(-73.001335, -71.749985)
+scale = Vector2(0.6223403, 0.6223404)
+sprite_frames = SubResource("SpriteFrames_qkv7l")
+flip_h = true
+flip_v = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Sprite2D" unique_id=986400502]
+show_behind_parent = true
+position = Vector2(-125.96677, -71.25)
+scale = Vector2(0.6462766, 0.6462766)
+sprite_frames = SubResource("SpriteFrames_f6y8b")
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=800415014]
+position = Vector2(-110, -99)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_61hvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1647376737]
+position = Vector2(-109, 21)
+shape = SubResource("CircleShape2D_61hvx")
