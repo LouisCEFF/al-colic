@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b57ennb81whox"]
 
-[ext_resource type="PackedScene" uid="uid://b38p4lqqcoyuq" path="res://scenes/al_colique.tscn" id="1_2ddto"]
+[ext_resource type="PackedScene" uid="uid://c52r7b4063c46" path="res://scenes/Al-colique.tscn" id="1_2ddto"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_61hvx"]
 normal = Vector2(-1, 0)
@@ -16,5 +16,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1032407721]
 shape = SubResource("WorldBoundaryShape2D_61hvx")
 
-[node name="Al-Colique" parent="." unique_id=1535677163 instance=ExtResource("1_2ddto")]
-position = Vector2(210, 205)
+[node name="Al-colique" parent="." unique_id=1988555812 instance=ExtResource("1_2ddto")]
+position = Vector2(341, 256)
+rotation = 0.0034690124

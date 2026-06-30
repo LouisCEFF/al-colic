@@ -22,8 +22,8 @@ autoplay = "Idle"
 frame_progress = 0.97983766
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065373372]
-light_mask = 3
-visibility_layer = 3
+light_mask = 7
+visibility_layer = 7
 position = Vector2(0, -1.9999999)
 scale = Vector2(0.54113156, 0.54113156)
 shape = SubResource("RectangleShape2D_61hvx")

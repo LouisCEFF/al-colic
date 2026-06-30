@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://do8mfsaggagjo"]
+[gd_scene format=3 uid="uid://c52r7b4063c46"]
 
 [ext_resource type="Texture2D" uid="uid://bwipx8rsjl7di" path="res://assets/assetsHands/LeftEnd.png" id="1_b6rl7"]
 [ext_resource type="Script" uid="uid://232pjsg0wo30" path="res://scripts/al_colique.gd" id="1_fbe4p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4vfi2yb2tog3" path="res://assets/assetsHands/RightEnd.png" id="3_np4qr"]
 [ext_resource type="Texture2D" uid="uid://bukp4wotjda5h" path="res://assets/assetsHands/RightStart.png" id="4_55pj8"]
 [ext_resource type="Texture2D" uid="uid://ccn0j5epdu41f" path="res://assets/AlColicHead.png" id="5_rlqts"]
+[ext_resource type="Script" uid="uid://cqc6fxyxvdypp" path="res://scripts/kill_zone.gd" id="7_np4qr"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_qkv7l"]
 target_nodepath = NodePath("../../../IK Targets/ArmR Target")
@@ -95,6 +96,54 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("KillZone/CollisionShape2D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-216.29326, -140.79468), Vector2(-114.26815, -169.3617), Vector2(-301.9944, -104.06563), Vector2(-216.2941, -140.79431)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("KillZone/CollisionShape2D2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("KillZone/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-214.25278, 146.9162), Vector2(-299.9539, 120.38965), Vector2(-106.106125, 144.87567), Vector2(-214.25171, 146.91618)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("KillZone/CollisionShape2D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_rhr3r"]
 length = 0.001
@@ -146,6 +195,54 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("KillZone/CollisionShape2D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-216.29326, -140.79468)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("KillZone/CollisionShape2D2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("KillZone/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-214.25278, 146.9162)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("KillZone/CollisionShape2D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t53lx"]
 _data = {
@@ -156,43 +253,59 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ws0vm"]
 radius = 19.104973
 
-[node name="Al-Colique" type="Node2D" unique_id=700121408]
+[node name="Al-colique" type="Node2D" unique_id=1988555812]
+light_mask = 4
 visibility_layer = 4
 scale = Vector2(0.49007535, 0.49007535)
 script = ExtResource("1_fbe4p")
+SPEED = 215
 
 [node name="CharacterContainer" type="Node2D" parent="." unique_id=57999207]
+
+[node name="RayCastLeft" type="RayCast2D" parent="CharacterContainer" unique_id=1052192063]
+position = Vector2(1.9073486e-06, 7.6293945e-06)
+scale = Vector2(2.6297894, 0.58928573)
+target_position = Vector2(-76.364, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="CharacterContainer" unique_id=370477337]
+position = Vector2(1.9073486e-06, 7.6293945e-06)
+scale = Vector2(2.6297894, 0.58928573)
+target_position = Vector2(69.576, 0)
+collision_mask = 4
+collide_with_areas = true
 
 [node name="Body" type="Node2D" parent="CharacterContainer" unique_id=1021968881]
 
 [node name="LeftEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=164685321]
-position = Vector2(-44.22352, -166.55392)
-rotation = 0.05341661
-scale = Vector2(0.9999992, 0.9999992)
+position = Vector2(-82.802246, -151.1261)
+rotation = 0.06262199
+scale = Vector2(0.99997824, 0.99997824)
 texture = ExtResource("1_b6rl7")
 offset = Vector2(-134, -48)
 flip_h = true
 flip_v = true
 
 [node name="LeftStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=1413319985]
-rotation = 0.120974086
-scale = Vector2(0.9999992, 0.9999992)
+rotation = -0.12072461
+scale = Vector2(0.99998707, 0.99998707)
 texture = ExtResource("2_fbe4p")
 offset = Vector2(-19, -93)
 flip_h = true
 flip_v = true
 
 [node name="RightEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=2144735521]
-position = Vector2(-39.473312, 167.74352)
-rotation = -0.073470846
-scale = Vector2(0.9999984, 0.9999984)
+position = Vector2(4.7712617, 172.25757)
+rotation = -0.05831806
+scale = Vector2(0.99997777, 0.99997777)
 texture = ExtResource("3_np4qr")
 offset = Vector2(-135, 46)
 flip_h = true
 
 [node name="RightStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=768564556]
-rotation = -0.14939165
-scale = Vector2(0.9999994, 0.9999994)
+rotation = -0.40819827
+scale = Vector2(0.9999863, 0.9999863)
 texture = ExtResource("4_55pj8")
 offset = Vector2(-41, 165)
 flip_h = true
@@ -213,7 +326,7 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="LeftStart" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Head" unique_id=880102760]
 rotation = -0.25433227
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(0.9678315, -0.25159922, 0.25159922, 0.9678315, 0, 0)
 metadata/_local_pose_override_enabled_ = true
 
@@ -222,7 +335,7 @@ remote_path = NodePath("../../../../../Body/RightStart")
 
 [node name="LeftEnd" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Head/LeftStart" unique_id=702804134]
 position = Vector2(-64, 160)
-rotation = 0.033875078
+rotation = 0.033875074
 scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(0.99942625, 0.03386861, -0.03386861, 0.99942625, -64, 160)
 auto_calculate_length_and_angle = false
@@ -245,7 +358,7 @@ position = Vector2(-64, -160)
 rest = Transform2D(1, 0, 0, 1, -64, -160)
 auto_calculate_length_and_angle = false
 length = 204.447
-bone_angle = 169.99995
+bone_angle = 169.99994
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Head/Roghtstart/RightEnd" unique_id=1635867295]
@@ -269,23 +382,19 @@ position = Vector2(-221, 149)
 libraries/ = SubResource("AnimationLibrary_t53lx")
 autoplay = &"Crow"
 
-[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1052192063]
-position = Vector2(1.9073486e-06, 7.6293945e-06)
-scale = Vector2(2.3849306, 0.58928573)
-target_position = Vector2(-76.364, 0)
-collision_mask = 4
+[node name="KillZone" type="Area2D" parent="." unique_id=988098905]
+script = ExtResource("7_np4qr")
 
-[node name="RayCastRight" type="RayCast2D" parent="." unique_id=370477337]
-position = Vector2(1.9073486e-06, 7.6293945e-06)
-scale = Vector2(2.3849306, 0.58928573)
-target_position = Vector2(69.576, 0)
-collision_mask = 4
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1742421867]
-position = Vector2(-144.87567, -77.5391)
-scale = Vector2(0.99999994, 0.99999994)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone" unique_id=1742421867]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-216.29326, -140.79468)
+scale = Vector2(2.5576494, 2.5576494)
 shape = SubResource("CircleShape2D_ws0vm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1210966450]
-position = Vector2(-109, 21)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1210966450]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-214.25278, 146.9162)
+scale = Vector2(2.5929914, 2.5929914)
 shape = SubResource("CircleShape2D_ws0vm")

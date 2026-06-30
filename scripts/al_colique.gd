@@ -5,8 +5,8 @@ var direction = -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if $RayCastLeft.is_colliding():
-		$CharacterContainer/Body.rotate(180)
+	if $CharacterContainer/RayCastLeft.is_colliding():
+		$CharacterContainer/Body.rotation = 0
 		#$Left.visible = false
 		#$KillZone/LR.disabled = true
 		#$KillZone/LL.disabled = true
@@ -15,8 +15,8 @@ func _physics_process(delta: float) -> void:
 		#$Right.visible = true
 		direction = 1
 		print("test")
-	if $RayCastRight.is_colliding():
-		$CharacterContainer/Body.rotate(180)
+	if $CharacterContainer/RayCastRight.is_colliding():
+		$CharacterContainer/Body.rotation = 180
 		#$Left.visible = true
 		#$KillZone/LR.disabled = false
 		#$KillZone/LL.disabled = false
