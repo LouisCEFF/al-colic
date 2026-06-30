@@ -4,14 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://b38p4lqqcoyuq" path="res://scenes/al_colique.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://8cl6nusp7fc2" path="res://scenes/louis.tscn" id="2_lnu2h"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_61hvx"]
-distance = -1348.0
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kn8ua"]
+a = Vector2(0, 306.49347)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8hkav"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gvkny"]
+a = Vector2(0, -2)
+b = Vector2(0, 1825)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_44kn2"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xd67o"]
+b = Vector2(-6.1035156e-05, 2006)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qkv7l"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_76nbc"]
 
 [node name="Node2D" type="Node2D" unique_id=948733281]
 
@@ -20,6 +23,7 @@ position = Vector2(24, -135)
 
 [node name="Louis" parent="." unique_id=799206629 instance=ExtResource("2_lnu2h")]
 position = Vector2(65, -261)
+SPEED = 240.0
 
 [node name="Camera2D" type="Camera2D" parent="Louis" unique_id=1901506988]
 zoom = Vector2(1.97, 1.97)
@@ -32,28 +36,41 @@ position_smoothing_enabled = true
 
 [node name="Al-Colique" parent="." unique_id=1535677163 instance=ExtResource("1_yqjtg")]
 position = Vector2(-77, 58)
+SPEED = 121
 
 [node name="Collsion for Al_colique" type="Area2D" parent="." unique_id=1424147765]
-position = Vector2(997, 16)
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-5, 0)
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=387568566]
-visibility_layer = 4
-position = Vector2(-1056, 6)
-shape = SubResource("WorldBoundaryShape2D_61hvx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=568690644]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-1004, -525)
+scale = Vector2(3.52, 6.160001)
+shape = SubResource("SegmentShape2D_kn8ua")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=619405238]
-visibility_layer = 4
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=899206428]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(998, -462)
+scale = Vector2(2.92, 1)
+shape = SubResource("SegmentShape2D_gvkny")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=1754733131]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-1006, -462)
 rotation = -1.5707964
-shape = SubResource("WorldBoundaryShape2D_8hkav")
+scale = Vector2(3.44, 1)
+shape = SubResource("SegmentShape2D_xd67o")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=1432998231]
-visibility_layer = 4
-position = Vector2(-2010, 148)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_44kn2")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=1231634074]
-visibility_layer = 4
-position = Vector2(-972, -478)
-rotation = 3.1415927
-shape = SubResource("WorldBoundaryShape2D_qkv7l")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=118654558]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-1006, 1362)
+rotation = -1.5707964
+scale = Vector2(4.3200006, 200.5244)
+shape = SubResource("SegmentShape2D_76nbc")

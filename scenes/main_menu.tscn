@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ccc1v6qhlmy6o"]
+
+[ext_resource type="Script" uid="uid://bjeykbly8v241" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://drmqlxdv2nhty" path="res://assets/fonts/VeniceClassic.ttf" id="2_ekxnf"]
+
+[node name="Main Menu" type="Node2D" unique_id=1416368127]
+script = ExtResource("1_l6cm7")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1358486060]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Continue" type="Button" parent="Button_manager" unique_id=578807023]
+layout_mode = 0
+offset_left = 242.99998
+offset_top = 150.0
+offset_right = 490.0
+offset_bottom = 229.0
+scale = Vector2(0.295, 0.295)
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 70
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="Button_manager" unique_id=291062992]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 175.0
+offset_right = 535.0
+offset_bottom = 254.0
+scale = Vector2(0.295, 0.295)
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 70
+text = "New Game"
+
+[node name="Quit" type="Button" parent="Button_manager" unique_id=1073165932]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 200.0
+offset_right = 383.0
+offset_bottom = 279.0
+scale = Vector2(0.295, 0.295)
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1687444184]
+position = Vector2(274, 185)
+zoom = Vector2(4.28, 4.28)
+
+[connection signal="pressed" from="Button_manager/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Button_manager/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
