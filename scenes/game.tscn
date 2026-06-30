@@ -1,75 +1,205 @@
 [gd_scene format=3 uid="uid://2qd0cjendksp"]
 
-[ext_resource type="PackedScene" uid="uid://bai0twu70uivk" path="res://scenes/Map.tscn" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://8cl6nusp7fc2" path="res://scenes/louis.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://c52r7b4063c46" path="res://scenes/Al-colique.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://232pjsg0wo30" path="res://scripts/al_colique.gd" id="1_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://ccn0j5epdu41f" path="res://assets/AlColicHead.png" id="2_iywne"]
+[ext_resource type="Texture2D" uid="uid://ci20exqij5iny" path="res://assets/Al-colique Arm 1.png" id="3_p57ef"]
+[ext_resource type="Script" uid="uid://cqc6fxyxvdypp" path="res://scripts/kill_zone.gd" id="4_u5sy4"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_kn8ua"]
-a = Vector2(0, 306.49347)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rivm7"]
+atlas = ExtResource("3_p57ef")
+region = Rect2(0, 0, 291, 188)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_gvkny"]
-a = Vector2(0, -2)
-b = Vector2(0, 1825)
+[sub_resource type="SpriteFrames" id="SpriteFrames_61hvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rivm7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xd67o"]
-b = Vector2(-6.1035156e-05, 2006)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcoc8"]
+atlas = ExtResource("3_p57ef")
+region = Rect2(291, 0, 291, 188)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_76nbc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hkav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcoc8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Node2D" type="Node2D" unique_id=948733281]
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lix"]
+atlas = ExtResource("3_p57ef")
+region = Rect2(0, 0, 291, 188)
 
-[node name="Map" parent="." unique_id=860832589 instance=ExtResource("1_lnu2h")]
-position = Vector2(24, -135)
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkv7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lix")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Louis" parent="." unique_id=799206629 instance=ExtResource("2_lnu2h")]
-position = Vector2(65, -261)
-SPEED = 240.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2mkq"]
+atlas = ExtResource("3_p57ef")
+region = Rect2(291, 0, 291, 188)
 
-[node name="Camera2D" type="Camera2D" parent="Louis" unique_id=1901506988]
-zoom = Vector2(1.97, 1.97)
-limit_left = -1106
-limit_top = -500
-limit_right = 1071
-limit_bottom = 1455
-limit_smoothed = true
-position_smoothing_enabled = true
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6y8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2mkq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Collsion for Al_colique" type="Area2D" parent="." unique_id=1424147765]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(-5, 0)
-collision_layer = 4
+[sub_resource type="CircleShape2D" id="CircleShape2D_61hvx"]
+radius = 19.104973
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvkny"]
+radius = 21.023796
+
+[node name="Al-Colique" type="Node2D" unique_id=878408517]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_lbhrr")
+
+[node name="Right" type="Sprite2D" parent="." unique_id=315900596]
+visible = false
+show_behind_parent = true
+position = Vector2(-21, -43)
+rotation = 3.1329143
+scale = Vector2(0.589, 0.589)
+texture = ExtResource("2_iywne")
+flip_v = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Right" unique_id=397395662]
+show_behind_parent = true
+position = Vector2(-70, 83)
+scale = Vector2(0.6755319, 0.6755319)
+sprite_frames = SubResource("SpriteFrames_61hvx")
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Right" unique_id=2084157865]
+show_behind_parent = true
+position = Vector2(-122.00001, 87)
+scale = Vector2(0.65957445, 0.65957445)
+sprite_frames = SubResource("SpriteFrames_8hkav")
+flip_h = true
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Right" unique_id=36376640]
+show_behind_parent = true
+position = Vector2(-73.001335, -71.749985)
+scale = Vector2(0.6223403, 0.6223404)
+sprite_frames = SubResource("SpriteFrames_qkv7l")
+flip_h = true
+flip_v = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Right" unique_id=1699168656]
+show_behind_parent = true
+position = Vector2(-125.96677, -71.25)
+scale = Vector2(0.6462766, 0.6462766)
+sprite_frames = SubResource("SpriteFrames_f6y8b")
+flip_h = true
+flip_v = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=541804204]
+position = Vector2(-20, -43.607143)
+scale = Vector2(2.829288, 0.58928573)
+target_position = Vector2(-30.159, 0)
 collision_mask = 4
+collide_with_areas = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=568690644]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(-1004, -525)
-scale = Vector2(3.52, 6.160001)
-shape = SubResource("SegmentShape2D_kn8ua")
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1955714151]
+position = Vector2(-20, -43.607143)
+scale = Vector2(1.2692852, 0.58928573)
+target_position = Vector2(60.318, 0)
+collision_mask = 4
+collide_with_areas = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=899206428]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(998, -462)
-scale = Vector2(2.92, 1)
-shape = SubResource("SegmentShape2D_gvkny")
+[node name="Left" type="Sprite2D" parent="." unique_id=281971269]
+show_behind_parent = true
+position = Vector2(-20, -43.607143)
+scale = Vector2(0.58928573, 0.58928573)
+texture = ExtResource("2_iywne")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=1754733131]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(-1006, -462)
-rotation = -1.5707964
-scale = Vector2(3.44, 1)
-shape = SubResource("SegmentShape2D_xd67o")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Left" unique_id=1355160839]
+show_behind_parent = true
+position = Vector2(-70, 83)
+scale = Vector2(0.6755319, 0.6755319)
+sprite_frames = SubResource("SpriteFrames_61hvx")
+flip_h = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=118654558]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(-1006, 1362)
-rotation = -1.5707964
-scale = Vector2(4.3200006, 200.5244)
-shape = SubResource("SegmentShape2D_76nbc")
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Left" unique_id=823899325]
+show_behind_parent = true
+position = Vector2(-122.00001, 87)
+scale = Vector2(0.65957445, 0.65957445)
+sprite_frames = SubResource("SpriteFrames_8hkav")
+flip_h = true
 
-[node name="Al-Colique" parent="." unique_id=700121408 instance=ExtResource("3_lnu2h")]
-SPEED = 171
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Left" unique_id=1084637535]
+show_behind_parent = true
+position = Vector2(-73.001335, -71.749985)
+scale = Vector2(0.6223403, 0.6223404)
+sprite_frames = SubResource("SpriteFrames_qkv7l")
+flip_h = true
+flip_v = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Left" unique_id=986400502]
+show_behind_parent = true
+position = Vector2(-125.96677, -71.25)
+scale = Vector2(0.6462766, 0.6462766)
+sprite_frames = SubResource("SpriteFrames_f6y8b")
+flip_h = true
+flip_v = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="Left" unique_id=1579414823]
+position = Vector2(0, -0.6666603)
+scale = Vector2(4.8837137, -0.29369187)
+target_position = Vector2(-30.159, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="Left" unique_id=2114055637]
+position = Vector2(0, -0.6666603)
+scale = Vector2(2.190949, -0.29369187)
+target_position = Vector2(60.318, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="KillZone" type="Area2D" parent="." unique_id=1996288964]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_u5sy4")
+
+[node name="LR" type="CollisionShape2D" parent="KillZone" unique_id=800415014]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-110, -99)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_61hvx")
+
+[node name="LL" type="CollisionShape2D" parent="KillZone" unique_id=1647376737]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-109, 21)
+shape = SubResource("CircleShape2D_61hvx")
+
+[node name="RL" type="CollisionShape2D" parent="KillZone" unique_id=342110904]
+position = Vector2(64, -107)
+shape = SubResource("CircleShape2D_gvkny")
+disabled = true
+
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
