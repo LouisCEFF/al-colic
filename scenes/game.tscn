@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://2qd0cjendksp"]
 
 [ext_resource type="PackedScene" uid="uid://bai0twu70uivk" path="res://scenes/Map.tscn" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://b38p4lqqcoyuq" path="res://scenes/al_colique.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://8cl6nusp7fc2" path="res://scenes/louis.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c52r7b4063c46" path="res://scenes/Al-colique.tscn" id="3_lnu2h"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kn8ua"]
 a = Vector2(0, 306.49347)
@@ -33,10 +33,6 @@ limit_right = 1071
 limit_bottom = 1455
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Al-Colique" parent="." unique_id=1535677163 instance=ExtResource("1_yqjtg")]
-position = Vector2(-77, 58)
-SPEED = 121
 
 [node name="Collsion for Al_colique" type="Area2D" parent="." unique_id=1424147765]
 light_mask = 7
@@ -74,3 +70,6 @@ position = Vector2(-1006, 1362)
 rotation = -1.5707964
 scale = Vector2(4.3200006, 200.5244)
 shape = SubResource("SegmentShape2D_76nbc")
+
+[node name="Al-Colique" parent="." unique_id=700121408 instance=ExtResource("3_lnu2h")]
+SPEED = 171
