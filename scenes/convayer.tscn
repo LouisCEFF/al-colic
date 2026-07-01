@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d05cedof1r8dm"]
+
+[ext_resource type="Script" uid="uid://cdmngwl7i51rb" path="res://scripts/convayer.gd" id="1_nn58r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0drok"]
+size = Vector2(20, 147)
+
+[node name="conveyor" type="Area2D" unique_id=21693250]
+gravity_point_center = Vector2(100, 0)
+gravity_direction = Vector2(100, 0)
+script = ExtResource("1_nn58r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=422388946]
+position = Vector2(0, -63.5)
+shape = SubResource("RectangleShape2D_0drok")

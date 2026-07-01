@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cd3e66ga45x3v"]
+
+[ext_resource type="Script" uid="uid://defbo787hkydg" path="res://scripts/fireplace.gd" id="1_o30kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(76, 20)
+
+[node name="Fireplace" type="Area2D" unique_id=27215274]
+script = ExtResource("1_o30kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1655793392]
+position = Vector2(28, -10)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

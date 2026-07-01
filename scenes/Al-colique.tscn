@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cqc6fxyxvdypp" path="res://scripts/kill_zone.gd" id="7_np4qr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvkny"]
-radius = 457.11356
+radius = 567.2597
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_qkv7l"]
 target_nodepath = NodePath("../../../IK Targets/ArmR Target")
@@ -289,33 +289,33 @@ collide_with_areas = true
 [node name="Body" type="Node2D" parent="CharacterContainer" unique_id=1021968881]
 
 [node name="LeftEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=164685321]
-position = Vector2(-57.888454, -162.29956)
-rotation = 0.05925097
-scale = Vector2(0.99986875, 0.99986875)
+position = Vector2(21.711693, -170.95094)
+rotation = 0.09765495
+scale = Vector2(0.99998504, 0.99998504)
 texture = ExtResource("1_b6rl7")
 offset = Vector2(-134, -48)
 flip_h = true
 flip_v = true
 
 [node name="LeftStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=1413319985]
-rotation = 0.03789314
-scale = Vector2(0.9999348, 0.9999348)
+rotation = 0.5068372
+scale = Vector2(0.9999907, 0.9999907)
 texture = ExtResource("2_fbe4p")
 offset = Vector2(-19, -93)
 flip_h = true
 flip_v = true
 
 [node name="RightEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=2144735521]
-position = Vector2(-23.077179, 170.76262)
-rotation = -0.06355307
-scale = Vector2(0.99988073, 0.99988073)
+position = Vector2(-96.60296, 142.70125)
+rotation = -0.11766859
+scale = Vector2(0.99998885, 0.99998885)
 texture = ExtResource("3_np4qr")
 offset = Vector2(-135, 46)
 flip_h = true
 
 [node name="RightStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=768564556]
-rotation = -0.2461793
-scale = Vector2(0.9999343, 0.9999343)
+rotation = 0.21458863
+scale = Vector2(0.9999935, 0.9999935)
 texture = ExtResource("4_55pj8")
 offset = Vector2(-41, 165)
 flip_h = true
