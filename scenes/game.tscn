@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bai0twu70uivk" path="res://scenes/Map.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://8cl6nusp7fc2" path="res://scenes/louis.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c52r7b4063c46" path="res://scenes/Al-colique.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ccoqbr313bt22" path="res://scenes/Jagger.tscn" id="4_lbhrr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kn8ua"]
 a = Vector2(0, 306.49347)
@@ -73,3 +74,6 @@ position = Vector2(-1006, 1362)
 rotation = -1.5707964
 scale = Vector2(4.3200006, 200.5244)
 shape = SubResource("SegmentShape2D_76nbc")
+
+[node name="Area2D" parent="." unique_id=1262220287 instance=ExtResource("4_lbhrr")]
+position = Vector2(270, 9)

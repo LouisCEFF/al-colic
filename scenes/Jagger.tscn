@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ccoqbr313bt22"]
+
+[ext_resource type="Script" uid="uid://tjgxbqn1ik2r" path="res://scripts/jagger.gd" id="1_j4rws"]
+[ext_resource type="Texture2D" uid="uid://sfbhjpopqi0e" path="res://assets/Jaggermaister.png" id="1_qnwkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61hvx"]
+size = Vector2(32, 81)
+
+[node name="Area2D" type="Area2D" unique_id=1262220287]
+script = ExtResource("1_j4rws")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676308620]
+position = Vector2(60, -65.25714)
+scale = Vector2(0.022857144, 0.022857143)
+texture = ExtResource("1_qnwkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526044616]
+position = Vector2(60, -65.5)
+scale = Vector2(0.19999999, 0.19999999)
+shape = SubResource("RectangleShape2D_61hvx")
