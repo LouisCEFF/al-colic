@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://ccn0j5epdu41f" path="res://assets/AlColicHead.png" id="5_rlqts"]
 [ext_resource type="Script" uid="uid://cqc6fxyxvdypp" path="res://scripts/kill_zone.gd" id="7_np4qr"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvkny"]
+radius = 457.11356
+
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_qkv7l"]
 target_nodepath = NodePath("../../../IK Targets/ArmR Target")
 tip_nodepath = NodePath("Head/Roghtstart/RightEnd/Bone2D")
@@ -253,12 +256,19 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ws0vm"]
 radius = 19.104973
 
-[node name="Al-colique" type="Node2D" unique_id=1988555812]
+[node name="Al-colique" type="CharacterBody2D" unique_id=1279396569]
 light_mask = 4
 visibility_layer = 4
 scale = Vector2(0.49007535, 0.49007535)
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_fbe4p")
 SPEED = 215
+
+[node name="Aggro_range" type="Area2D" parent="." unique_id=133309477]
+
+[node name="Aggro_collision" type="CollisionShape2D" parent="Aggro_range" unique_id=1051560988]
+shape = SubResource("CircleShape2D_gvkny")
 
 [node name="CharacterContainer" type="Node2D" parent="." unique_id=57999207]
 
@@ -279,33 +289,33 @@ collide_with_areas = true
 [node name="Body" type="Node2D" parent="CharacterContainer" unique_id=1021968881]
 
 [node name="LeftEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=164685321]
-position = Vector2(-82.802246, -151.1261)
-rotation = 0.06262199
-scale = Vector2(0.99997824, 0.99997824)
+position = Vector2(-57.888454, -162.29956)
+rotation = 0.05925097
+scale = Vector2(0.99986875, 0.99986875)
 texture = ExtResource("1_b6rl7")
 offset = Vector2(-134, -48)
 flip_h = true
 flip_v = true
 
 [node name="LeftStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=1413319985]
-rotation = -0.12072461
-scale = Vector2(0.99998707, 0.99998707)
+rotation = 0.03789314
+scale = Vector2(0.9999348, 0.9999348)
 texture = ExtResource("2_fbe4p")
 offset = Vector2(-19, -93)
 flip_h = true
 flip_v = true
 
 [node name="RightEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=2144735521]
-position = Vector2(4.7712617, 172.25757)
-rotation = -0.05831806
-scale = Vector2(0.99997777, 0.99997777)
+position = Vector2(-23.077179, 170.76262)
+rotation = -0.06355307
+scale = Vector2(0.99988073, 0.99988073)
 texture = ExtResource("3_np4qr")
 offset = Vector2(-135, 46)
 flip_h = true
 
 [node name="RightStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=768564556]
-rotation = -0.40819827
-scale = Vector2(0.9999863, 0.9999863)
+rotation = -0.2461793
+scale = Vector2(0.9999343, 0.9999343)
 texture = ExtResource("4_55pj8")
 offset = Vector2(-41, 165)
 flip_h = true
@@ -335,7 +345,7 @@ remote_path = NodePath("../../../../../Body/RightStart")
 
 [node name="LeftEnd" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Head/LeftStart" unique_id=702804134]
 position = Vector2(-64, 160)
-rotation = 0.033875074
+rotation = 0.03387507
 scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(0.99942625, 0.03386861, -0.03386861, 0.99942625, -64, 160)
 auto_calculate_length_and_angle = false
@@ -358,7 +368,7 @@ position = Vector2(-64, -160)
 rest = Transform2D(1, 0, 0, 1, -64, -160)
 auto_calculate_length_and_angle = false
 length = 204.447
-bone_angle = 169.99994
+bone_angle = 169.99992
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Head/Roghtstart/RightEnd" unique_id=1635867295]
@@ -398,3 +408,15 @@ visibility_layer = 2
 position = Vector2(-214.25278, 146.9162)
 scale = Vector2(2.5929914, 2.5929914)
 shape = SubResource("CircleShape2D_ws0vm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=705424343]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=516495225]
+wait_time = 0.023
+autostart = true
+
+[connection signal="body_entered" from="Aggro_range" to="." method="_on_aggro_range_body_entered"]
+[connection signal="body_exited" from="Aggro_range" to="." method="_on_aggro_range_body_exited"]
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2449,6 +2449,7 @@ texture = ExtResource("2_soxo1")
 15:15/0 = 0
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 8
 sources/2 = SubResource("TileSetAtlasSource_p57ef")
 sources/3 = SubResource("TileSetAtlasSource_u5sy4")
