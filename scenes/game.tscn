@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://ccoqbr313bt22" path="res://scenes/Jagger.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cd3e66ga45x3v" path="res://scenes/fireplace.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://d05cedof1r8dm" path="res://scenes/convayer.tscn" id="6_u5sy4"]
+[ext_resource type="Script" uid="uid://c1hl0iqhx7ery" path="res://scripts/label.gd" id="7_0tnpc"]
+[ext_resource type="Script" uid="uid://bsvl85t8txidv" path="res://scripts/node_2d.gd" id="7_gee14"]
 [ext_resource type="Script" uid="uid://c733y46ms3g6s" path="res://scripts/game_manager.gd" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cfm0veu3kdc8" path="res://scenes/candle.tscn" id="9_vtaks"]
+[ext_resource type="PackedScene" uid="uid://b608shxsftcxw" path="res://scenes/finish.tscn" id="10_kvpfn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p57ef"]
-vertices = PackedVector2Array(954, 2005, -635, 2005, -635, -305.04688, 954.9922, -313.9375)
+vertices = PackedVector2Array(726, 2005, -635, 2005, -635, -305, 726, -305)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(965, -324, 964, 2015.002, -645, 2015.002, -645, -315.00034)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(736, -315.00034, 736, 2015.002, -645, 2015.002, -645, -315.00034)])
 source_geometry_group_name = &"navigation"
 cell_size = 16.0
 
@@ -20,13 +24,13 @@ a = Vector2(0, 161.3636)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gvkny"]
 a = Vector2(0, -2)
-b = Vector2(1.369873, 935)
+b = Vector2(-1.5258789e-05, 935)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xd67o"]
-b = Vector2(-0.29071808, 1620)
+b = Vector2(-1.5258789e-05, 1400)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_76nbc"]
-b = Vector2(-1.5258789e-05, 8.10874)
+b = Vector2(0, 6.9816947)
 
 [node name="Node2D" type="Node2D" unique_id=948733281]
 
@@ -41,7 +45,7 @@ use_edge_connections = false
 [node name="Map" parent="." unique_id=860832589 instance=ExtResource("1_lnu2h")]
 
 [node name="Louis" parent="." unique_id=799206629 instance=ExtResource("2_lnu2h")]
-position = Vector2(65, -261)
+position = Vector2(-137, -217)
 SPEED = 240.0
 
 [node name="Camera2D" type="Camera2D" parent="Louis" unique_id=1901506988]
@@ -54,6 +58,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Al-colique" parent="." unique_id=1988555812 node_paths=PackedStringArray("player") instance=ExtResource("3_lnu2h")]
+position = Vector2(-183, 517)
 SPEED = 139
 player = NodePath("../Louis")
 
@@ -74,7 +79,7 @@ shape = SubResource("SegmentShape2D_kn8ua")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collsion for Al_colique" unique_id=899206428]
 light_mask = 7
 visibility_layer = 7
-position = Vector2(967, -327)
+position = Vector2(745.00006, -327)
 scale = Vector2(2.92, 1)
 shape = SubResource("SegmentShape2D_gvkny")
 
@@ -93,17 +98,6 @@ position = Vector2(-650.00006, 615)
 rotation = -1.5707964
 scale = Vector2(4.3200006, 200.5244)
 shape = SubResource("SegmentShape2D_76nbc")
-
-[node name="Jaggers" type="Node2D" parent="." unique_id=1170860402]
-
-[node name="Area2D3" parent="Jaggers" unique_id=425919702 instance=ExtResource("4_lbhrr")]
-position = Vector2(-128.99998, -247.99998)
-
-[node name="Area2D2" parent="Jaggers" unique_id=1722553790 instance=ExtResource("4_lbhrr")]
-position = Vector2(230.99998, -240.99998)
-
-[node name="Area2D" parent="Jaggers" unique_id=1463634195 instance=ExtResource("4_lbhrr")]
-position = Vector2(307.99997, 80.99999)
 
 [node name="Fireplaces" type="Node2D" parent="." unique_id=1770806607]
 
@@ -128,8 +122,21 @@ speed = 50.0
 [node name="GameManager" type="Node2D" parent="." unique_id=1162451451]
 script = ExtResource("7_u5sy4")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1213681799]
+script = ExtResource("7_gee14")
+jagger_scene = ExtResource("4_lbhrr")
+min_jagger = 5
+max_jagger = 8
+candle_scene = ExtResource("9_vtaks")
+
+[node name="Area2D2" parent="." unique_id=1301272491 instance=ExtResource("10_kvpfn")]
+position = Vector2(-184, 520)
+scale = Vector2(0.98295635, 0.98295635)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=698466242]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=377933792]
 offset_right = 40.0
 offset_bottom = 23.0
+script = ExtResource("7_0tnpc")
+metadata/_edit_use_anchors_ = true

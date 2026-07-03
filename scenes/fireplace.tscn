@@ -5,11 +5,26 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(76, 20)
 
+[sub_resource type="Gradient" id="Gradient_o30kg"]
+offsets = PackedFloat32Array(0.45783132, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_61hvx"]
+gradient = SubResource("Gradient_o30kg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="Fireplace" type="Area2D" unique_id=27215274]
 script = ExtResource("1_o30kg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1655793392]
 position = Vector2(28, -10)
 shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=475489754]
+position = Vector2(28, -10)
+scale = Vector2(2.1473389, 1.397971)
+texture = SubResource("GradientTexture2D_61hvx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

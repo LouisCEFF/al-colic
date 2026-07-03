@@ -52,6 +52,8 @@ func _ready():
 func _on_area_entered(area):
 	if area.is_in_group("item") and not area.is_held:
 		nearby_item = area
+	elif area.is_in_group("candles") and not area.is_held:
+		nearby_item = area
 
 func _on_area_exited(area):
 	if area == nearby_item:

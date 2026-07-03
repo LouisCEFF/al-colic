@@ -23,8 +23,8 @@ func _physics_process(_delta: float) -> void:
 		var next_path_pos := nav_agent.get_next_path_position()
 		var dir = global_position.direction_to(next_path_pos)
 		velocity = dir * SPEED
-		look_at(-player.position)
-	print("finished: ", nav_agent.is_navigation_finished(), "\n\t target : ", nav_agent.target_position, "\n\t pos: ", global_position)
+		look_at(dir)
+	#print("finished: ", nav_agent.is_navigation_finished(), "\n\t target : ", nav_agent.target_position, "\n\t pos: ", global_position)
 	if nav_agent.is_navigation_finished():
 		return
 	move_and_slide()
@@ -70,6 +70,7 @@ func _pick_new_partol_point() -> void:
 	nav_agent.target_position = newdir
 	var dir = global_position.direction_to(newdir)
 	velocity = dir * SPEED
+	look_at(-dir)
 	move_and_slide()
 
 #func _on_timer_timeout() -> void:

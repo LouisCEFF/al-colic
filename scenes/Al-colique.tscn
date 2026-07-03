@@ -6,10 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://4vfi2yb2tog3" path="res://assets/assetsHands/RightEnd.png" id="3_np4qr"]
 [ext_resource type="Texture2D" uid="uid://bukp4wotjda5h" path="res://assets/assetsHands/RightStart.png" id="4_55pj8"]
 [ext_resource type="Texture2D" uid="uid://ccn0j5epdu41f" path="res://assets/AlColicHead.png" id="5_rlqts"]
+[ext_resource type="Script" uid="uid://cqytrcpk2y0wh" path="res://scripts/kill_zone2.gd" id="7_55pj8"]
 [ext_resource type="Script" uid="uid://cqc6fxyxvdypp" path="res://scripts/kill_zone.gd" id="7_np4qr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvkny"]
 radius = 567.2597
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61hvx"]
+radius = 52.046288
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_qkv7l"]
 target_nodepath = NodePath("../../../IK Targets/ArmR Target")
@@ -46,6 +50,19 @@ enabled = true
 modification_count = 2
 modifications/0 = SubResource("SkeletonModification2DCCDIK_qkv7l")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_f6y8b")
+
+[sub_resource type="Gradient" id="Gradient_np4qr"]
+offsets = PackedFloat32Array(0, 0.92771083)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_61hvx"]
+gradient = SubResource("Gradient_np4qr")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ws0vm"]
+radius = 19.104973
 
 [sub_resource type="Animation" id="Animation_ws0vm"]
 resource_name = "Crow"
@@ -95,54 +112,6 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.33, 0.66, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("KillZone/CollisionShape2D2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-216.29326, -140.79468), Vector2(-114.26815, -169.3617), Vector2(-301.9944, -104.06563), Vector2(-216.2941, -140.79431)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("KillZone/CollisionShape2D2:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("KillZone/CollisionShape2D:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-214.25278, 146.9162), Vector2(-299.9539, 120.38965), Vector2(-106.106125, 144.87567), Vector2(-214.25171, 146.91618)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("KillZone/CollisionShape2D:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.66, 0.99999994),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0]
@@ -198,63 +167,12 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("KillZone/CollisionShape2D2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-216.29326, -140.79468)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("KillZone/CollisionShape2D2:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("KillZone/CollisionShape2D:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-214.25278, 146.9162)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("KillZone/CollisionShape2D:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t53lx"]
 _data = {
 &"Crow": SubResource("Animation_ws0vm"),
 &"RESET": SubResource("Animation_rhr3r")
 }
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ws0vm"]
-radius = 19.104973
 
 [node name="Al-colique" type="CharacterBody2D" unique_id=1279396569]
 light_mask = 4
@@ -289,33 +207,33 @@ collide_with_areas = true
 [node name="Body" type="Node2D" parent="CharacterContainer" unique_id=1021968881]
 
 [node name="LeftEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=164685321]
-position = Vector2(21.711693, -170.95094)
-rotation = 0.09765495
-scale = Vector2(0.99998504, 0.99998504)
+position = Vector2(-44.22352, -166.55392)
+rotation = 0.05341661
+scale = Vector2(0.9999992, 0.9999992)
 texture = ExtResource("1_b6rl7")
 offset = Vector2(-134, -48)
 flip_h = true
 flip_v = true
 
 [node name="LeftStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=1413319985]
-rotation = 0.5068372
-scale = Vector2(0.9999907, 0.9999907)
+rotation = 0.120974086
+scale = Vector2(0.9999992, 0.9999992)
 texture = ExtResource("2_fbe4p")
 offset = Vector2(-19, -93)
 flip_h = true
 flip_v = true
 
 [node name="RightEnd" type="Sprite2D" parent="CharacterContainer/Body" unique_id=2144735521]
-position = Vector2(-96.60296, 142.70125)
-rotation = -0.11766859
-scale = Vector2(0.99998885, 0.99998885)
+position = Vector2(-39.47328, 167.74326)
+rotation = -0.073472224
+scale = Vector2(0.99999857, 0.99999857)
 texture = ExtResource("3_np4qr")
 offset = Vector2(-135, 46)
 flip_h = true
 
 [node name="RightStart" type="Sprite2D" parent="CharacterContainer/Body" unique_id=768564556]
-rotation = 0.21458863
-scale = Vector2(0.9999935, 0.9999935)
+rotation = -0.14939223
+scale = Vector2(0.99999946, 0.99999946)
 texture = ExtResource("4_55pj8")
 offset = Vector2(-41, 165)
 flip_h = true
@@ -324,6 +242,15 @@ flip_h = true
 position = Vector2(-1, -2)
 scale = Vector2(1.3928572, 1.3928571)
 texture = ExtResource("5_rlqts")
+
+[node name="KillzoneHead" type="Area2D" parent="CharacterContainer/Body/AlColicHead" unique_id=786390430]
+position = Vector2(0.7179489, 4.36585)
+scale = Vector2(1.2085264, 1.2085264)
+script = ExtResource("7_55pj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterContainer/Body/AlColicHead/KillzoneHead" unique_id=394240519]
+scale = Vector2(0.9316062, 0.9316062)
+shape = SubResource("CircleShape2D_61hvx")
 
 [node name="Bones" type="Node2D" parent="CharacterContainer" unique_id=1959980929]
 visible = false
@@ -345,7 +272,7 @@ remote_path = NodePath("../../../../../Body/RightStart")
 
 [node name="LeftEnd" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Head/LeftStart" unique_id=702804134]
 position = Vector2(-64, 160)
-rotation = 0.03387507
+rotation = 0.033875056
 scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(0.99942625, 0.03386861, -0.03386861, 0.99942625, -64, 160)
 auto_calculate_length_and_angle = false
@@ -368,7 +295,7 @@ position = Vector2(-64, -160)
 rest = Transform2D(1, 0, 0, 1, -64, -160)
 auto_calculate_length_and_angle = false
 length = 204.447
-bone_angle = 169.99992
+bone_angle = 169.99991
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Head/Roghtstart/RightEnd" unique_id=1635867295]
@@ -385,38 +312,56 @@ remote_path = NodePath("../../../../../Body/LeftStart")
 [node name="ArmR Target" type="Node2D" parent="IK Targets" unique_id=1825835691]
 position = Vector2(-226, -152)
 
+[node name="KillzoneR" type="Area2D" parent="IK Targets/ArmR Target" unique_id=361849799]
+position = Vector2(9.706725, 5.0838203)
+script = ExtResource("7_55pj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IK Targets/ArmR Target/KillzoneR" unique_id=1312443348]
+scale = Vector2(0.9316062, 0.9316062)
+shape = SubResource("CircleShape2D_61hvx")
+
+[node name="PointLight2D2" type="PointLight2D" parent="IK Targets/ArmR Target" unique_id=80428914]
+position = Vector2(4.0809937, 7.6293945e-06)
+scale = Vector2(3.526255, 3.526255)
+texture = SubResource("GradientTexture2D_61hvx")
+
 [node name="ArmL Target" type="Node2D" parent="IK Targets" unique_id=347777857]
 position = Vector2(-221, 149)
+
+[node name="KillZoneL" type="Area2D" parent="IK Targets/ArmL Target" unique_id=543197617]
+position = Vector2(0, -8.162008)
+script = ExtResource("7_np4qr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IK Targets/ArmL Target/KillZoneL" unique_id=1789790156]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1.4147949, 2.083808)
+scale = Vector2(2.5576494, 2.5576494)
+shape = SubResource("CircleShape2D_ws0vm")
+
+[node name="PointLight2D2" type="PointLight2D" parent="IK Targets/ArmL Target" unique_id=1357900771]
+position = Vector2(6.747223, -2.0838127)
+scale = Vector2(3.526255, 3.526255)
+texture = SubResource("GradientTexture2D_61hvx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=370179068]
 libraries/ = SubResource("AnimationLibrary_t53lx")
 autoplay = &"Crow"
 
-[node name="KillZone" type="Area2D" parent="." unique_id=988098905]
-script = ExtResource("7_np4qr")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone" unique_id=1742421867]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(-216.29326, -140.79468)
-scale = Vector2(2.5576494, 2.5576494)
-shape = SubResource("CircleShape2D_ws0vm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1210966450]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(-214.25278, 146.9162)
-scale = Vector2(2.5929914, 2.5929914)
-shape = SubResource("CircleShape2D_ws0vm")
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=705424343]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=516495225]
 wait_time = 0.023
 autostart = true
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1675715246]
+scale = Vector2(3.526255, 3.526255)
+texture = SubResource("GradientTexture2D_61hvx")
+
 [connection signal="body_entered" from="Aggro_range" to="." method="_on_aggro_range_body_entered"]
 [connection signal="body_exited" from="Aggro_range" to="." method="_on_aggro_range_body_exited"]
+[connection signal="body_entered" from="CharacterContainer/Body/AlColicHead/KillzoneHead" to="CharacterContainer/Body/AlColicHead/KillzoneHead" method="_on_body_entered"]
+[connection signal="body_entered" from="IK Targets/ArmR Target/KillzoneR" to="IK Targets/ArmR Target/KillzoneR" method="_on_body_entered"]
+[connection signal="body_entered" from="IK Targets/ArmL Target/KillZoneL" to="IK Targets/ArmL Target/KillZoneL" method="_on_body_entered"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

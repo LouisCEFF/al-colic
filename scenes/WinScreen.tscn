@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://ber6euyiy06de"]
+
+[ext_resource type="Texture2D" uid="uid://gfv1omwjjqad" path="res://assets/LOLOIC.png" id="1_q8i45"]
+[ext_resource type="Script" uid="uid://ftj8pj2n4apv" path="res://scripts/Winning.gd" id="2_jrum5"]
+[ext_resource type="SpriteFrames" uid="uid://7y87mh2r2syp" path="res://sprites/Jumpscare.tres" id="2_q8i45"]
+[ext_resource type="FontFile" uid="uid://cd6g8oaxbsvc7" path="res://assets/fonts/PixelOperator8.ttf" id="3_f4f3g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4f3g"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_274dy"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1718609603]
+position = Vector2(11, 3)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2113852194]
+offset_left = -10.0
+offset_top = -3.0
+offset_right = 30.0
+offset_bottom = 37.0
+scale = Vector2(15.425169, 8.0117)
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1110431862]
+position = Vector2(276, 211)
+zoom = Vector2(4.33, 4.33)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=105770387]
+position = Vector2(274, 232)
+scale = Vector2(0.25611502, 0.25611502)
+texture = ExtResource("1_q8i45")
+
+[node name="ButtonManager2" type="Control" parent="." unique_id=1558851586]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 273.0
+offset_top = 264.0
+offset_right = 313.0
+offset_bottom = 304.0
+script = ExtResource("2_jrum5")
+
+[node name="Retry" type="Button" parent="ButtonManager2" unique_id=647375400]
+layout_mode = 0
+offset_left = -58.0
+offset_top = -39.0
+offset_right = 344.0
+offset_bottom = 40.0
+scale = Vector2(0.11, 0.11)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_f4f3g")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4f3g")
+
+[node name="Quit" type="Button" parent="ButtonManager2" unique_id=1023735395]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -39.0
+offset_right = 410.0
+offset_bottom = 40.0
+scale = Vector2(0.11, 0.11)
+theme_override_fonts/font = ExtResource("3_f4f3g")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_274dy")
+
+[node name="RetryText" type="RichTextLabel" parent="ButtonManager2" unique_id=2104877760]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -38.0
+offset_right = 465.0
+offset_bottom = 38.271187
+scale = Vector2(0.075, 0.075)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_f4f3g")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave]Retry ?[/wave]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitText" type="RichTextLabel" parent="ButtonManager2" unique_id=1404360330]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -42.0
+offset_right = 929.33325
+offset_bottom = 144.66669
+scale = Vector2(0.075, 0.075)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_f4f3g")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave]Quit ?[/wave]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2001146166]
+position = Vector2(275, 157)
+scale = Vector2(1.0400025, 1)
+sprite_frames = ExtResource("2_q8i45")
+animation = &"Fire"
+autoplay = "Fire"
+frame_progress = 0.93849635
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=885744631]
+offset_left = 208.0
+offset_top = 159.0
+offset_right = 1447.399
+offset_bottom = 349.909
+scale = Vector2(0.11, 0.11)
+theme_override_fonts/normal_font = ExtResource("3_f4f3g")
+theme_override_font_sizes/normal_font_size = 160
+bbcode_enabled = true
+text = "[wave amp=150.0]YOU WIN[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 130
+
+[connection signal="button_down" from="ButtonManager2/Retry" to="ButtonManager2" method="_on_retry_button_down"]
+[connection signal="button_down" from="ButtonManager2/Quit" to="ButtonManager2" method="_on_quit_button_down"]

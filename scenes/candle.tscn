@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cfm0veu3kdc8"]
+
+[ext_resource type="Texture2D" uid="uid://b6sl62ywcobcv" path="res://assets/candle-removebg-preview.png" id="1_ctofe"]
+[ext_resource type="Script" uid="uid://bmv2hi1qpkytk" path="res://scripts/candle.gd" id="1_ybelu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61hvx"]
+
+[sub_resource type="Gradient" id="Gradient_ctofe"]
+offsets = PackedFloat32Array(0, 0.006024096, 0.012048192, 0.686747, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9469953, 0.9469953, 0.9469953, 1, 0.88629544, 0.88629544, 0.88629544, 1, 0.3313253, 0.3313253, 0.3313253, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_61hvx"]
+gradient = SubResource("Gradient_ctofe")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Area2D" type="Area2D" unique_id=118939201]
+scale = Vector2(0.08944967, 0.08944967)
+script = ExtResource("1_ybelu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164558669]
+scale = Vector2(0.52341926, 0.52341926)
+texture = ExtResource("1_ctofe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=404746686]
+scale = Vector2(10.709365, 10.709365)
+shape = SubResource("CircleShape2D_61hvx")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=657044157]
+scale = Vector2(21.803062, 21.91442)
+color = Color(1, 1, 0.7137255, 1)
+texture = SubResource("GradientTexture2D_61hvx")
